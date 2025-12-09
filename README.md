@@ -45,8 +45,8 @@ allprojects {
 **Step 2:** Add dependency to your app module `build.gradle`:
 ```
 dependencies {
-    implementation("com.github.Excelsior-Technologies-Community:ImageCropperView:1.0.0")
-}
+implementation("com.github.Excelsior-Technologies-Community:ImageCrop:1.0.0")
+ }
 ```
 ## **📦 Usage**
 
