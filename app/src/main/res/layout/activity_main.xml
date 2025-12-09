@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- Top Bar -->
+    <!-- Top Bar -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#000000"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Back Button (X) -->
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="38dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/close"
+            android:scaleType="centerInside"
+            android:padding="10dp"
+            android:contentDescription="Back"
+            app:tint="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        <!-- Drop Image Text -->
+        <TextView
+            android:id="@+id/tvDropImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crop Image"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginStart="-10dp"
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintEnd_toStartOf="@id/btnSave"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center"
+            android:ellipsize="end"
+            android:singleLine="true"/>
+
+        <!-- Reset Button -->
+        <ImageButton
+            android:id="@+id/btnReset"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/reset"
+            android:scaleType="centerInside"
+            android:padding="10dp"
+            android:contentDescription="Reset"
+            app:tint="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@id/btnSave"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        <!-- Tick/Save Button -->
+        <ImageButton
+            android:id="@+id/btnSave"
+            android:layout_width="42dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/check"
+            android:scaleType="centerInside"
+            android:padding="10dp"
+            android:contentDescription="Save"
+            app:tint="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Crop View -->
+    <com.ext.image_crop.ImageCropperView
+        android:id="@+id/cropperView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cropShape="square"
+        app:borderColor="#FFFFFF"
+        app:borderWidth="3dp"
+        app:overlayColor="#AA000000"
+        app:cornerHandleColor="#FFFFFF"
+        app:cornerHandleRadius="10dp"
+        app:gridColor="#88FFFFFF"
+        app:showGrid="true"
+        app:minCropSize="100dp"
+        android:background="#000000" />
+
+
+    <!-- Bottom Bar with Shape Selection -->
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center"
+        android:background="#1A1A1A"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Square Shape Button -->
+        <ImageButton
+            android:id="@+id/btnShapeSquare"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/shape_selector"
+            android:src="@drawable/ic_square"
+            android:contentDescription="Square"
+            android:enabled="false"
+            app:tint="#FFFFFF" />
+
+        <!-- Rectangle Shape Button -->
+        <ImageButton
+            android:id="@+id/btnShapeRectangle"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/shape_selector"
+            android:src="@drawable/ic_rectangle"
+            android:contentDescription="Rectangle"
+            android:enabled="false"
+            app:tint="#FFFFFF" />
+
+        <!-- Circle Shape Button -->
+        <ImageButton
+            android:id="@+id/btnShapeCircle"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/shape_selector"
+            android:src="@drawable/ic_circle"
+            android:contentDescription="Circle"
+            android:enabled="false"
+            app:tint="#FFFFFF" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ImageCropperView">
+        <!-- Crop shape: square, rectangle, or circle -->
+        <attr name="cropShape" format="enum">
+            <enum name="square" value="0" />
+            <enum name="rectangle" value="1" />
+            <enum name="circle" value="2" />
+        </attr>
+
+        <!-- Border color -->
+        <attr name="borderColor" format="color" />
+
+        <!-- Border width -->
+        <attr name="borderWidth" format="dimension" />
+
+        <!-- Overlay color (dimmed area outside crop) -->
+        <attr name="overlayColor" format="color" />
+
+        <!-- Corner handle color -->
+        <attr name="cornerHandleColor" format="color" />
+
+        <!-- Corner handle radius -->
+        <attr name="cornerHandleRadius" format="dimension" />
+
+        <!-- Grid line color -->
+        <attr name="gridColor" format="color" />
+
+        <!-- Show grid lines -->
+        <attr name="showGrid" format="boolean" />
+
+        <!-- Minimum crop size -->
+        <attr name="minCropSize" format="dimension" />
+    </declare-styleable>
+</resources>
